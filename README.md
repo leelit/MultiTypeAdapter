@@ -1,16 +1,16 @@
 # MultiTypeAdapter
 
-##Usage
-
 multi type adapter for RecyclerView
+
+## Usage
 
 Three steps to make your RecyclerView support multi types easily
 
 0. prepare
 
-- copy the library src to your module
+  - copy the library src to your module
 
-- add dependcy to your module, like `compile 'com.android.support:recyclerview-v7:24.0.0-alpha2'`
+  - add dependcy to your module, like `compile 'com.android.support:recyclerview-v7:24.0.0-alpha2'`
 
 1. define your data model like MyItem which implements `Item`
 ```
@@ -61,15 +61,19 @@ public class MyDelegate implements ItemDelegate<MyItem, MyDelegate.ViewHolder> {
 3. put data to MultiTypeAdapter
 ```
 List<Item> adapterItems = new ArrayList<>();
+// add any counts of MyItem
 adapterItems.add(new MyItem(value));
-// add other Items...
+adapterItems.add(new MyItem(value));
+adapterItems.add(new MyItem(value));
+// add other different types of Item...
+
 // set MultiTypeAdapter with different Items for RecyclerView
 recyclerView.setAdapter(new MultiTypeAdapter(adapterItems));
 ```
 
 
-##ScreenShot
-art.png
+## ScreenShot
+![screenshot](https://github.com/leelit/MultiTypeAdapter/blob/master/art.png?raw=true)
 
-##License
+## License
 MIT
